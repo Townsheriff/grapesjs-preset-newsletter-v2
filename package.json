@@ -1,7 +1,8 @@
 {
   "name": "grapesjs-preset-newsletter-v2",
-  "version": "1.0.1",
+  "version": "1.0.21",
   "description": "GrapesJS preset configuration for the newsletter editor",
+  "repository": "https://github.com/Townsheriff/grapesjs-preset-newsletter-v2",
   "main": "dist/main.js",
   "scripts": {
     "lint:fix": "prettier --write .",
@@ -10,6 +11,7 @@
     "dev": "webpack-dev-server",
     "v:patch": "npm version --no-git-tag-version patch",
     "start": "weback-dev-server",
+    "publish": "npm run build && npm run v:patch",
     "test": "jest"
   },
   "keywords": [
