@@ -40,19 +40,13 @@ Demo: http://grapesjs.com/demo-newsletter-editor.html
     - `tableStyle` Default style used for blocks tables, default:
       `{ height: '150px', margin: '0 auto 10px auto', padding: '5px 5px 5px 5px', width: '100%' }`
 
-## Download
-
-Download using one of the options:
-
-- `npm i grapesjs-preset-newsletter` or `yarn add grapesjs-preset-newsletter`
-- Latest release link https://github.com/artf/grapesjs-preset-newsletter/releases/latest
-- CDN
-  - https://unpkg.com/grapesjs-preset-newsletter
-  - https://unpkg.com/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.css
-
 ## Usage
 
-```with bundler
+```sh
+$ npm i grapesjs-preset-newsletter-v2
+```
+
+```javascript
 import grapesjs from "grapesjs";
 import newsLetter from "grapesjs-preset-newsletter";
 
@@ -74,27 +68,18 @@ const editor = grapesjs.init({
 Clone the repository
 
 ```sh
-$ git clone https://github.com/artf/grapesjs-preset-newsletter.git
-$ cd grapesjs-preset-newsletter
-```
-
-Install dependencies
-
-```sh
+$ git clone https://github.com/artf/grapesjs-preset-newsletter-v2.git
+$ cd grapesjs-preset-newsletter-v2
 $ npm i
+$ npm link
+$ npm run dev
 ```
 
-The plugin relies on GrapesJS via `peerDependencies`, so you have to install it manually (without adding it to package.json)
-
+In main project:
 ```sh
-$ npm i grapesjs --no-save
+$ npm link grapesjs-preset-newsletter-v2
 ```
 
-Start the dev server
-
-```sh
-$ npm start
-```
 
 ## License
 
