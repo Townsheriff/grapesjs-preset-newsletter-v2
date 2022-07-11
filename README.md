@@ -48,7 +48,7 @@ $ npm i grapesjs-preset-newsletter-v2
 
 ```javascript
 import grapesjs from "grapesjs";
-import newsLetter from "grapesjs-preset-newsletter";
+import newsLetter from "grapesjs-preset-newsletter-v2";
 
 grapesjs.plugins.add("gjs-preset-newsletter", newsLetter);
 
