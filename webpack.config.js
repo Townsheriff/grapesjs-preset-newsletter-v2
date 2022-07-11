@@ -1,30 +1,30 @@
-var path = require('path');
-var webpack = require('webpack');
-var pkg = require('./package.json');
-var name = 'grapesjs-preset-newsletter';
-var env = process.env.WEBPACK_ENV;
-var plugins = [];
-
-if(env !== 'dev'){
-  plugins.push(new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }));
-  plugins.push(new webpack.BannerPlugin(pkg.name + ' - ' + pkg.version));
-}
+const path = require("path");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
-  entry: './src',
+  entry: "./src/index.js",
+  devServer: {
+    devMiddleware: {
+      writeToDisk: true,
+    },
+  },
   output: {
-      filename: './dist/' + name + '.min.js',
-      library: name,
-      libraryTarget: 'umd',
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+    library: "grapesjs-preset-newsletter",
+    libraryTarget: "umd",
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      include: /src/,
-      exclude: /node_modules/
-    }],
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader",],
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
   },
-  externals: {'grapesjs': 'grapesjs'},
-  plugins: plugins
+  plugins: [new NodePolyfillPlugin()],
 };

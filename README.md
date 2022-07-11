@@ -9,11 +9,11 @@ Demo: http://grapesjs.com/demo-newsletter-editor.html
 
 ## Summary
 
-* Commands
+- Commands
   - `gjs-get-inlined-html` Get html with inlined CSS
   - `gjs-open-import-template` Opens a modal for the import
   - `gjs-toggle-images` Enable/Disable images
-* Blocks
+- Blocks
   - `sect100` A section with 1 100% cell inside
   - `sect50` A section with 2 50% cells inside
   - `sect30` A section with 3 33.3333% cells inside
@@ -26,9 +26,9 @@ Demo: http://grapesjs.com/demo-newsletter-editor.html
   - `quote` Text component for quotes
   - `grid-items` Block of 2 components in row
   - `list-items` List of 2 components
-* Plugin
-  * Name: `gjs-preset-newsletter`
-  * Options:
+- Plugin
+  - Name: `gjs-preset-newsletter`
+  - Options:
     - `modalTitleImport` Title for the import modal, default: 'Import template'
     - `modalLabelImport` Label for the import modal, default: ''
     - `modalLabelExport` Label for the export modal, default: ''
@@ -36,55 +36,38 @@ Demo: http://grapesjs.com/demo-newsletter-editor.html
     - `importPlaceholder` Template as a placeholder inside import modal, default: ''
     - `inlineCss` If `true`, inlines CSS on export, default: `true`
     - `cellStyle` Default style used inside blocks `td`s, default:
-      `{
-        padding: 0,
-        margin: 0,
-        'vertical-align': 'top'
-      }`
+      `{ padding: 0, margin: 0, 'vertical-align': 'top' }`
     - `tableStyle` Default style used for blocks tables, default:
-      `{
-        height: '150px',
-        margin: '0 auto 10px auto',
-        padding: '5px 5px 5px 5px',
-        width: '100%'
-      }`
-
+      `{ height: '150px', margin: '0 auto 10px auto', padding: '5px 5px 5px 5px', width: '100%' }`
 
 ## Download
 
 Download using one of the options:
 
-* `npm i grapesjs-preset-newsletter` or `yarn add grapesjs-preset-newsletter`
-* Latest release link https://github.com/artf/grapesjs-preset-newsletter/releases/latest
-* CDN 
-  * https://unpkg.com/grapesjs-preset-newsletter 
-  * https://unpkg.com/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.css
-
+- `npm i grapesjs-preset-newsletter` or `yarn add grapesjs-preset-newsletter`
+- Latest release link https://github.com/artf/grapesjs-preset-newsletter/releases/latest
+- CDN
+  - https://unpkg.com/grapesjs-preset-newsletter
+  - https://unpkg.com/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.css
 
 ## Usage
 
-```html
-<link href="path/to/grapes.min.css" rel="stylesheet"/>
-<link href="path/to/grapesjs-preset-newsletter.css" rel="stylesheet"/>
+```with bundler
+import grapesjs from "grapesjs";
+import newsLetter from "grapesjs-preset-newsletter";
 
-<script src="path/to/grapes.min.js"></script>
-<script src="path/to/grapesjs-preset-newsletter.min.js"></script>
+grapesjs.plugins.add("gjs-preset-newsletter", newsLetter);
 
-<div id="gjs"></div>
-<script type="text/javascript">
-  var editor = grapesjs.init({
-      container : '#gjs',
-      plugins: ['gjs-preset-newsletter'],
-      pluginsOpts: {
-        'gjs-preset-newsletter': {
-          modalTitleImport: 'Import template',
-          // ... other options
-        }
-      }
-  });
-</script>
+const editor = grapesjs.init({
+  container: "#editor",
+  plugins: ["gjs-preset-newsletter"],
+  pluginsOpts: {
+    "gjs-preset-newsletter": {
+      inlineCss: false,
+    },
+  },
+});
 ```
-
 
 ## Development
 
@@ -112,7 +95,6 @@ Start the dev server
 ```sh
 $ npm start
 ```
-
 
 ## License
 

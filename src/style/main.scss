@@ -196,7 +196,9 @@
   border-top: none;
 }
 
-.#{$app-prefix}sm-sector .#{$app-prefix}sm-property .#{$app-prefix}sm-layer.#{$app-prefix}sm-active {
+.#{$app-prefix}sm-sector
+  .#{$app-prefix}sm-property
+  .#{$app-prefix}sm-layer.#{$app-prefix}sm-active {
   background-color: rgba(255, 255, 255, 0.09);
 }
 
@@ -208,8 +210,12 @@
 }
 */
 
-.#{$app-prefix}f-button::before { content: 'B'; }
-.#{$app-prefix}f-divider::before { content: 'D'; }
+.#{$app-prefix}f-button::before {
+  content: "B";
+}
+.#{$app-prefix}f-divider::before {
+  content: "D";
+}
 
 .#{$app-prefix}mdl-dialog-sm {
   width: 300px;

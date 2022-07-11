@@ -41,7 +41,7 @@
   pointer-events: auto;
 }
 
-[data-tooltip-pos=right]::after {
+[data-tooltip-pos="right"]::after {
   bottom: 50%;
   left: 100%;
   -webkit-transform: translate(0, 50%);
@@ -49,14 +49,14 @@
   transform: translate(0, 50%);
 }
 
-[data-tooltip-pos=right]:focus::after,
-[data-tooltip-pos=right]:hover::after {
+[data-tooltip-pos="right"]:focus::after,
+[data-tooltip-pos="right"]:hover::after {
   -webkit-transform: translate(0.5rem, 50%);
   -ms-transform: translate(0.5rem, 50%);
   transform: translate(0.5rem, 50%);
 }
 
-[data-tooltip-pos=bottom]::after {
+[data-tooltip-pos="bottom"]::after {
   bottom: auto;
   top: 100%;
   -webkit-transform: translate(-50%, 0);
@@ -64,14 +64,14 @@
   transform: translate(-50%, 0);
 }
 
-[data-tooltip-pos=bottom]:focus::after,
-[data-tooltip-pos=bottom]:hover::after {
+[data-tooltip-pos="bottom"]:focus::after,
+[data-tooltip-pos="bottom"]:hover::after {
   -webkit-transform: translate(-50%, 0.5rem);
   -ms-transform: translate(-50%, 0.5rem);
   transform: translate(-50%, 0.5rem);
 }
 
-[data-tooltip-pos=left]::after {
+[data-tooltip-pos="left"]::after {
   bottom: 50%;
   left: auto;
   right: 100%;
@@ -80,8 +80,8 @@
   transform: translate(0, 50%);
 }
 
-[data-tooltip-pos=left]:focus::after,
-[data-tooltip-pos=left]:hover::after {
+[data-tooltip-pos="left"]:focus::after,
+[data-tooltip-pos="left"]:hover::after {
   -webkit-transform: translate(-0.5rem, 50%);
   -ms-transform: translate(-0.5rem, 50%);
   transform: translate(-0.5rem, 50%);
